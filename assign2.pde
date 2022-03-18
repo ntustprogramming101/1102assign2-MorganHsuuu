@@ -41,7 +41,8 @@ int countdown;
 
 void setup(){
   frameRate(60);
-  println(test/80);
+  //println(test/80);
+  
   size(640,480);
    bg = loadImage("img/bg.jpg");
   soil = loadImage("img/soil.png");
