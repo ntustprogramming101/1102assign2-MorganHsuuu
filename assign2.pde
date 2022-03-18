@@ -211,8 +211,8 @@ else {
        }
      }
      image(groundhogIdle,round(groundhog_X),round(groundhog_Y));
-     println("up  "+upTimes);
-     println("up  "+groundhog_X,groundhog_Y);
+     //println("up  "+upTimes);
+     //println("up  "+groundhog_X,groundhog_Y);
    }          
   if(downTimes > 0){
      groundhog_Y+= 16.0/3;
@@ -220,25 +220,25 @@ else {
      if(downTimes == 1 ){
        typeAgain = true;
        
-       if(downPressed == true){ //<>//
+       if(downPressed == true){
         downTimes += 15;
        }
        
      }
-      println("downTimes"+downTimes);
-      println("down X Y"+groundhog_X,groundhog_Y);
+      //println("downTimes"+downTimes);
+      //println("down X Y"+groundhog_X,groundhog_Y);
      if(downTimes == 0 ){
      
      }
      image(groundhogDown,round(groundhog_X),round(groundhog_Y));
      
-     println("down  "+downTimes);
-     println("down  "+groundhog_X,groundhog_Y);
+     //println("down  "+downTimes);
+     //println("down  "+groundhog_X,groundhog_Y);
    }       
        
       
  if(rightTimes > 0){
-    println(rightTimes);
+    //println(rightTimes);
     groundhog_X+= 16.0/3;
     rightTimes--;
      //if(rightTimes==0){
@@ -250,7 +250,7 @@ else {
         rightTimes += 15;
        }
      }
-      println("right  "+groundhog_X,groundhog_Y);
+      //println("right  "+groundhog_X,groundhog_Y);
      image(groundhogRight,round(groundhog_X),round(groundhog_Y));  
    }  
        
@@ -272,8 +272,8 @@ else {
      }
      
      image(groundhogLeft,(groundhog_X),(groundhog_Y)); 
-     println("left  "+leftTimes);
-     println("left  "+groundhog_X,groundhog_Y);
+     //println("left  "+leftTimes);
+     //println("left  "+groundhog_X,groundhog_Y);
    }       
 }
  
@@ -289,7 +289,7 @@ else {
      }
  //collision_soldier   
    if(round(groundhog_X) < soldierWalk + soldierWidth && hogWidth + round(groundhog_X)>soldierWalk &&
-      round(groundhog_Y) < soldierPosition*80 + soldierWidth && round(groundhog_Y) + hogWidth > soldierPosition*80){    //<>//
+      round(groundhog_Y) < soldierPosition*80 + soldierWidth && round(groundhog_Y) + hogWidth > soldierPosition*80){   
     lifes --;
     gameState=GAME_RUN;
     //println(lifes);
