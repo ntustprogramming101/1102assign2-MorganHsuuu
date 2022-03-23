@@ -42,7 +42,6 @@ int countdown;
 void setup(){
   frameRate(60);
   //println(test/80);
-  
   size(640,480);
    bg = loadImage("img/bg.jpg");
   soil = loadImage("img/soil.png");
@@ -175,13 +174,7 @@ void draw() {
   if(upTimes == 0 && downTimes == 0 && rightTimes == 0 && leftTimes ==0){
     image(groundhogIdle,groundhog_X,groundhog_Y);
     if(typeAgain == false){
-      if(upPressed == true){
-          upTimes = 15; 
-          }
-      else if(downPressed == true){
-          downTimes = 15;
-          }
-      else if(downPressed == true){
+       if(downPressed == true){
           downTimes = 15;
           }
       else if(rightPressed == true){
@@ -194,27 +187,7 @@ void draw() {
 }
 else {
   //Move according to counter
-  if(upTimes > 0){
-     groundhog_Y-= 16.0/3 ;
-     upTimes--;
-     //if(upTimes==0){
-     //groundhog_Y=(groundhog_Y)/80*80;
-     //}
-     if(upTimes == 1 ){
-       if(key == UP){
-       upTimes += 15;
-       }
-     }
-     if(upTimes == 1 ){
-       typeAgain = true;
-       if(upPressed == true){
-        upTimes += 15;
-       }
-     }
-     image(groundhogIdle,round(groundhog_X),round(groundhog_Y));
-     //println("up  "+upTimes);
-     //println("up  "+groundhog_X,groundhog_Y);
-   }          
+            
   if(downTimes > 0){
      groundhog_Y+= 16.0/3;
      downTimes--;
@@ -223,11 +196,10 @@ else {
        
        if(downPressed == true){
         downTimes += 15;
-       }
-       
+       }       
      }
       //println("downTimes"+downTimes);
-      //println("down X Y"+groundhog_X,groundhog_Y);
+      //println("down X Y"+round(groundhog_X),round(groundhog_Y));
      if(downTimes == 0 ){
      
      }
@@ -300,7 +272,7 @@ else {
     ca_Situation = false;
   
      
-    upTimes=0;  //test derection
+ //test derection
     downTimes=0;
     leftTimes=0;
     rightTimes=0;
@@ -318,7 +290,7 @@ else {
          cabbage_X = floor(random(0,8));
          cabbage_Y = floor(random(2,6));
          
-         upTimes=0;  //test derection
+          //test derection
          downTimes=0;
          leftTimes=0;
          rightTimes=0;
@@ -337,12 +309,7 @@ else {
 void keyPressed(){
   if(typeAgain==true) {
   if(key==CODED){
-      switch (keyCode) {
-      case UP:
-        upPressed = true ;
-        typeAgain = false ;
-        break;
-      
+      switch (keyCode) {   
       case DOWN:
          downPressed = true;
          typeAgain = false ;
@@ -363,7 +330,6 @@ void keyPressed(){
   }
 }
 void keyReleased(){
-  upPressed = false;
  downPressed = false;
  leftPressed = false;
  rightPressed = false;
