@@ -268,7 +268,6 @@ else {
     //println(lifes);
     groundhog_X=groundhog_X1;
     groundhog_Y=groundhog_Y1;
-    soldierPosition=floor(random(2,6));
     ca_Situation = false;
   
      
